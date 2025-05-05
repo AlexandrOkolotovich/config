@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/order_system_dev
     username: postgres
-    password: "{cipher}af225782cba040a518a48b7dc7e96fde14e98ee2aed4810ebc27335261ffd672"
+    password: "{cipher}e89f17b97b254684084c45ccf2b32398673bc9facdbd08a9e4660df4492d4b5f"
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 5
