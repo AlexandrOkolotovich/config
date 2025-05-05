@@ -1,16 +1,45 @@
-example:
-  property: "I AM DEV"
+# Общие настройки
+example.property: I AM DEV
 
+# Настройки базы данных
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/order_system_dev
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+      connection-timeout: 30000
+
+  # Настройки JPA
   jpa:
     hibernate:
       ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+# Настройки Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: '*'
+    access:
+      default: unrestricted
+
+# Настройки Eureka
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
