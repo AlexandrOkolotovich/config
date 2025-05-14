@@ -30,9 +30,10 @@ management:
   endpoints:
     web:
       exposure:
-        exclude: '*'
-    access:
-      default: unrestricted
+        include: health,info  # Включаем health и info endpoints
+  endpoint:
+    health:
+      show-details: always    # Показывать детали health status
 
 # Настройки Eureka
 eureka:
