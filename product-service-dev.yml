@@ -24,14 +24,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
 
-# Настройки Actuator
-management:
-  endpoints:
-    web:
-      exposure:
-        exclude: '*'
-    access:
-      default: unrestricted
 
 # Настройки Eureka
 eureka:
