@@ -12,9 +12,6 @@ eureka:
 spring:
   cloud:
     gateway:
-      discovery.locator:
-        enabled: true
-        lowerCaseServiceId: true
       routes:
         - id: product-service
           uri: lb://product-service
