@@ -4,7 +4,7 @@ example.property: I AM DEV
 # Настройки базы данных
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/order_system_dev
+    url: jdbc:postgresql://database:5432/order_system_dev
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
