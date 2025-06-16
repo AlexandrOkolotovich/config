@@ -34,3 +34,13 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://eurekaserver:8761/eureka/
+
+keycloak:
+  realm: proselyte
+  auth-server-url: http://keycloak:8080/auth
+  ssl-required: external
+  resource: spetalex
+  credentials:
+    secret: 9I90TadYuwGu4AGFlJAhF4Vl974jrGbX
+  use-resource-role-mappings: true
+  bearer-only: true
