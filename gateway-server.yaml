@@ -7,7 +7,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://eurekaserver:8761/eureka
+      defaultZone: http://localhost:8761/eureka #http://eurekaserver:8761/eureka
 
 spring:
   cloud:
@@ -25,3 +25,9 @@ spring:
             - Path=/order/**
           filters:
             - RewritePath=/order/(?<path>.*), /$\{path}
+        - id:  financing-service
+          uri: lb://financing-service
+          predicates:
+            - Path=/finance/**
+          filters:
+            - RewritePath=/finance/(?<path>.*), /$\{path}
